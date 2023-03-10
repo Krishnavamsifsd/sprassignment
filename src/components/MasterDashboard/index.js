@@ -6,15 +6,19 @@ const MasterDashboard = () => {
   const [inputs, setInputs] = useState([]);
   const [operations, setOperations] = useState([]);
   const [outputs, setOutputs] = useState([]);
+  const [expectedoutputs, setexpectedoutput] = useState([]);
 
   useEffect(() => {
     const savedInputs = JSON.parse(localStorage.getItem("inputs")) || [];
     const savedOperations =
       JSON.parse(localStorage.getItem("operations")) || [];
     const savedOutputs = JSON.parse(localStorage.getItem("outputs")) || [];
+    const savedexoutput =
+      JSON.parse(localStorage.getItem("expectedoutputs")) || [];
     setInputs(savedInputs);
     setOperations(savedOperations);
     setOutputs(savedOutputs);
+    setexpectedoutput(savedexoutput);
   }, []);
 
   const handleInputSubmit = (event) => {
@@ -24,20 +28,24 @@ const MasterDashboard = () => {
     const input2 = event.target.elements.input2.value;
     const newInputs = [...inputs, input1, input2];
     const newOperations = [...operations, operation];
+    let expectedOutput;
+    if (operation === "+") {
+      expectedOutput = Number(input1) + Number(input2);
+    } else if (operation === "-") {
+      expectedOutput = Number(input1) - Number(input2);
+    } else if (operation === "*") {
+      expectedOutput = Number(input1) * Number(input2);
+    } else if (operation === "/") {
+      expectedOutput = Number(input1) / Number(input2);
+    }
+    const newExpectedOutputs = [...expectedoutputs, expectedOutput];
     setInputs(newInputs);
     setOperations(newOperations);
+    setOutputs([]);
+    setexpectedoutput(newExpectedOutputs);
     localStorage.setItem("inputs", JSON.stringify(newInputs));
     localStorage.setItem("operations", JSON.stringify(newOperations));
-    event.target.reset();
-  };
-
-  const handleOutputSubmit = (event) => {
-    event.preventDefault();
-    const output = event.target.elements.output.value;
-    const newOutputs = [...outputs, output];
-    console.log(newOutputs);
-    setOutputs(newOutputs);
-    localStorage.setItem("outputs", JSON.stringify(newOutputs));
+    localStorage.setItem("expectedoutputs", JSON.stringify(newExpectedOutputs));
     event.target.reset();
   };
 
@@ -48,6 +56,8 @@ const MasterDashboard = () => {
       const input2 = inputs[i + 1];
       const operation = operations[i / 2];
       const output = outputs[i / 2];
+      let expectoutput = expectedoutputs[i / 2];
+
       cards.push(
         <div key={i} className="card">
           <h2>Question {i / 2 + 1}</h2>
@@ -58,7 +68,9 @@ const MasterDashboard = () => {
             <br />
             <span className="card__label">Input 2 :</span> {input2}
             <br />
-            <span className="card__label">Output:</span> {output}
+            <span className="card__label">Expected Output:</span> {expectoutput}
+            <br />
+            <span className="card__label">Student Output:</span> {output}
           </p>
         </div>
       );
@@ -90,7 +102,7 @@ const MasterDashboard = () => {
                 type="text"
                 name="operation"
                 required
-                placeholder="+,-,*,/"
+                placeholder=" + ,  - ,  * ,  / "
               />
             </label>
             <label>
