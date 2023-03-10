@@ -31,7 +31,7 @@ const StudentDashboard = () => {
       const output = outputs[i / 2];
       cards.push(
         <div className="card" key={i}>
-          <h2>Card {i / 2 + 1}</h2>
+          <h2>Question {i / 2 + 1}</h2>
           <p>
             Input 1: {input1}
             <br />
