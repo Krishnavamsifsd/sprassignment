@@ -50,7 +50,7 @@ const MasterDashboard = () => {
       const output = outputs[i / 2];
       cards.push(
         <div key={i} className="card">
-          <h2>Card {i / 2 + 1}</h2>
+          <h2>Question {i / 2 + 1}</h2>
           <p>
             <span className="card__label">Input 1 :</span> {input1}
             <br />
