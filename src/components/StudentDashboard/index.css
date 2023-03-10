@@ -1,0 +1,145 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f2f2f2;
+}
+
+.card {
+  background-color: #edf1ff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+.card h2 {
+  font-size: 24px;
+  color: #9b2335;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card a {
+  color: #282d3c;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form label {
+  font-size: 18px;
+  color: #333;
+  margin-right: 10px;
+}
+
+form input[type="text"] {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid #3498db;
+  margin-right: 10px;
+  width: 100%;
+}
+
+form button[type="submit"] {
+  padding: 5px 10px;
+  background-color: #282d3c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.card__label {
+  color: #00061a;
+  justify-content: space-between;
+}
+
+/* Responsive Styles */
+
+@media screen and (min-width: 768px) {
+  .card {
+    flex-basis: 45%;
+    margin: 10px;
+  }
+
+  .card h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
+  .card p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+}

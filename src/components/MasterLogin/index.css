@@ -1,0 +1,18 @@
+.master-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.master-form {
+  width: 30%;
+  height: 38%;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: 12px;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
