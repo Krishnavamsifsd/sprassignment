@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./index.css";
+import "./slindex.css";
 
 const StudentLogin = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const StudentLogin = () => {
   return (
     <div className="student-login-container">
       <form className="student-form" onSubmit={studentHandler}>
-        <h3>Student Login</h3>
+        <h3>Student Login</h3>{" "}
         <input
           type="text"
           placeholder="Enter username"
@@ -41,11 +41,10 @@ const StudentLogin = () => {
           placeholder="Enter password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
-        <p>{err}</p>
+        <button type="submit">Login</button> <p>{err}</p>{" "}
         <Link to="/student-signup">
           <p>create account?</p>
-        </Link>
+        </Link>{" "}
       </form>
     </div>
   );

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-import "./index.css";
+import "./msindex.css";
 
 const MasterSignup = () => {
   const [email, setEmail] = useState("");

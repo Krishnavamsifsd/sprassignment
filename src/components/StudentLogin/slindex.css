@@ -1,0 +1,45 @@
+.student-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full screen height */
+}
+
+.student-form {
+  width: 300px; /* fixed width */
+  padding: 20px;
+  border: 1px solid black;
+  background-color: lightblue; /* added this line */
+  border-radius: 10px; /* added this line */
+  box-shadow: 5px 5px 10px gray; /* added this line */
+}
+
+.student-form h3 {
+  text-align: center;
+}
+
+.student-form input {
+  display: block; /* full width */
+  margin: 10px auto; /* center horizontally */
+  padding: 10px;
+}
+
+.student-form button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.student-form p {
+  color: red;
+}
+
+/* added these lines */
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+button:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}

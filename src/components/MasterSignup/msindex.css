@@ -1,0 +1,27 @@
+.master-signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.master-signup-form {
+  width: 400px;
+  border: 2px solid #ccc;
+  padding: 30px;
+}
+
+.master-signup-form h3 {
+  text-align: center;
+}
+
+.master-signup-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.master-signup-form button {
+  display: block;
+  width: 100%;
+}

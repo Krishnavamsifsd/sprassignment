@@ -1,0 +1,27 @@
+.master-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.master-form {
+  width: 400px;
+  border: 2px solid #ccc;
+  padding: 20px;
+}
+
+.master-form h3 {
+  text-align: center;
+}
+
+.master-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.master-form button {
+  display: block;
+  width: 100%;
+}
